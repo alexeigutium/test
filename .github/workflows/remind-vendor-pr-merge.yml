@@ -12,9 +12,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v2
+      - name: Diff revision
+          id: diff_rev
+          shell: bash
+          run: |
+            delta=$(git log)
+            delta="${delta//'%'/'%25'}"
+            delta="${delta//$'\n'/'%0A'}"
+            delta="${delta//$'\r'/'%0D'}"
+            echo "::set-output name=delta_code::$delta"
       - name: Use Auto Comment Bot
-        uses: wow-actions/auto-comment@v1
+        uses: bubkoo/auto-comment@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           pullRequestClosed: >
