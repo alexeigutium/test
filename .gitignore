@@ -1,0 +1,14 @@
+# Vim
+*~
+*.bak
+
+#Goland
+.idea/
+
+# macOS
+.DS_Store
+
+# Vscode
+.vscode
+
+**/bin

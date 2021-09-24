@@ -1,0 +1,14 @@
+# grafana/loki-stack
+
+grafana:
+  enabled: true
+  image:
+    tag: 8.0.5
+  persistence:
+    enabled: true
+    size: 10Gi
+
+loki:
+  persistence:
+    enabled: true
+    size: 50Gi
