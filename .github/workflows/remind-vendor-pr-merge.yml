@@ -14,7 +14,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
       - name: Use Auto Comment Bot
-        uses: wow-actions/auto-comment@v1
+        uses: bubkoo/auto-comment@v1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           pullRequestClosed: >
